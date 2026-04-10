@@ -2,6 +2,7 @@
 //  UITestDefaults.swift
 //  uiTestifyUITests
 //
+import Foundation
 
 enum UITestDefaults {
     static let elementWait: TimeInterval = 5
