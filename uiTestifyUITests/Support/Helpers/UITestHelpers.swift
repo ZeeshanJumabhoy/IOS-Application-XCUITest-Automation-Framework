@@ -15,7 +15,7 @@ extension XCUIApplication {
         buttons.matching(identifier: identifier).firstMatch
     }
 
-    func scrollUntilVisible(_ element: XCUIElement, maxSwipes: Int = 16, scrollStep: CGFloat = 0.3 ) {
+    func scrollUntilVisible(_ element: XCUIElement, maxSwipes: Int = 16) {
         let scrollView = scrollViews.firstMatch
         var swipes = 0
         var swipeUpDirection = true
@@ -25,23 +25,21 @@ extension XCUIApplication {
                 return
             }
 
-                let container = scrollView.exists ? scrollView : self
-
-                // 👇 Controlled drag instead of swipe
-                let start = container.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
-                let end: XCUICoordinate
-
+            if scrollView.exists {
                 if swipeUpDirection {
-                    end = container.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5 - scrollStep))
+                    scrollView.swipeUp()
                 } else {
-                    end = container.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5 + scrollStep))
+                    scrollView.swipeDown()
                 }
-
-            start.press(forDuration: 0.01, thenDragTo: end)
+            } else {
+                if swipeUpDirection {
+                    swipeUp(velocity: .fast)
+                } else {
+                    swipeDown(velocity: .fast)
+                }
+            }
 
             swipes += 1
-
-            // 🔁 Reverse direction halfway
             if swipes == maxSwipes / 2 {
                 swipeUpDirection = false
             }
