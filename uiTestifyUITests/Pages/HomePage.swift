@@ -54,7 +54,6 @@ final class HomePage {
             identifier: AccessibilityIds.HomeView.searchField,
             text: TestData.Search.formWizardFilter
         )
-        app.dismissKeyboardIfVisible()
 
         let wizard = dashboardModuleButton(AccessibilityIds.Dashboard.formWizard)
         app.scrollUntilVisible(wizard)

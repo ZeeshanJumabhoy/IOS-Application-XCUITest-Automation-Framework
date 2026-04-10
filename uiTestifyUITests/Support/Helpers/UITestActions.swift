@@ -71,6 +71,7 @@ extension XCUIApplication {
         line: UInt = #line
     ) {
         textFields.matching(identifier: identifier).firstMatch.enterText(text, timeout: timeout, file: file, line: line)
+        dismissKeyboardIfVisible()
     }
 
     func enterTextInSecureField(
@@ -81,6 +82,7 @@ extension XCUIApplication {
         line: UInt = #line
     ) {
         secureTextFields.matching(identifier: identifier).firstMatch.enterText(text, timeout: timeout, file: file, line: line)
+        dismissKeyboardIfVisible()
     }
 
     func assertElementVisible(

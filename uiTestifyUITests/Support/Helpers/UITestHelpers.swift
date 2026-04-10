@@ -145,6 +145,21 @@ extension XCUIApplication {
         return false
     }
 
+    /// Prefer this over `tapSwitch` for SwiftUI `Toggle` rows (identifier on outer `Switch`, real thumb nested).
+    func tapSwiftUIToggleRow(
+        identifier: String,
+        overallTimeout: TimeInterval = 12,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        XCTAssertTrue(
+            tapSwiftUIToggleUntilValueChanges(accessibilityIdentifier: identifier, overallTimeout: overallTimeout),
+            "SwiftUI toggle did not change: \(identifier)",
+            file: file,
+            line: line
+        )
+    }
+
     private static func innerThumbSwitch(under row: XCUIElement) -> XCUIElement {
         let nested = row.descendants(matching: .switch)
         guard nested.count > 0 else { return row }
