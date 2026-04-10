@@ -77,6 +77,7 @@ enum AccessibilityIds {
 
     enum List {
         static func listItem(title: String) -> String { "ListItem_\(title)" }
+        static func listItemCheckmark(title: String) -> String { "ListItem_\(title)_checkmark" }
     }
 
     enum AsyncLoading {

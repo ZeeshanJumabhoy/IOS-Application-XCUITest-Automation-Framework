@@ -36,7 +36,7 @@ final class AccessibilityTabBarPage {
 
         app.assertElementVisible(identifier: AccessibilityIds.TabBarTest.mainTabView)
 
-        app.tapSwitch(identifier: AccessibilityIds.TabBarTest.toggleBadge)
+        app.tapSwiftUIToggleRow(identifier: AccessibilityIds.TabBarTest.toggleBadge)
 
         let tabBar = app.tabBars.firstMatch
         tabBar.requirePresent(UITestDefaults.elementWait, "Tab bar")
