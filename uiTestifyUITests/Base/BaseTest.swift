@@ -27,7 +27,7 @@ class BaseTest: XCTestCase {
     }
 
     /// Keep launch in one place for consistent behavior.
-    func launchApp(timeout: TimeInterval = 15) {
+    func launchApp(timeout: TimeInterval = UITestDefaults.launchTimeout) {
         app.launch()
         XCTAssertTrue(
             app.wait(for: .runningForeground, timeout: timeout),
