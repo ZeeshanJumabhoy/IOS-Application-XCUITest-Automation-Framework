@@ -8,15 +8,19 @@ import SwiftUI
 import Combine
 
 class ThemeManager: ObservableObject {
+    private let isUITestMode = ProcessInfo.processInfo.environment["UITEST_MODE"] == "1"
+
     @Published var isDarkMode: Bool {
         didSet {
-            // Update global UIKit tint color
+            // Keep startup simple in UI tests to reduce launch flakiness.
+            guard !isUITestMode else { return }
             UIView.appearance().tintColor = UIColor(Color.primary(forDarkMode: isDarkMode))
         }
     }
 
     init(isDarkMode: Bool = false) {
         self.isDarkMode = isDarkMode
+        guard !isUITestMode else { return }
         UIView.appearance().tintColor = UIColor(Color.primary(forDarkMode: isDarkMode))
     }
 }

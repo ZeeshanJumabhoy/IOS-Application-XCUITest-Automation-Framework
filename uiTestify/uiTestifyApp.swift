@@ -11,6 +11,12 @@ import SwiftUI
 struct UiTestifyApp: App {
     @StateObject private var themeManager = ThemeManager()
 
+    init() {
+        if ProcessInfo.processInfo.environment["UITEST_MODE"] == "1" {
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             HomeView()

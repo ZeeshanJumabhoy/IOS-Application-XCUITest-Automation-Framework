@@ -21,12 +21,21 @@
 			remoteGlobalIDString = 070C7BD32DE1EBD100187B10;
 			remoteInfo = uiTestify;
 		};
+		1ACF642B2F799DB6005D863E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 070C7BCC2DE1EBD100187B10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 070C7BD32DE1EBD100187B10;
+			remoteInfo = uiTestify;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		070C7BD42DE1EBD100187B10 /* uiTestify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uiTestify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C7BE12DE1EBD300187B10 /* uiTestifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTestifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C7BEB2DE1EBD300187B10 /* uiTestifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTestifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACF64202F799B0C005D863E /* uiTestify.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = uiTestify.xctestplan; sourceTree = "<group>"; };
+		1ACF64252F799DB6005D863E /* uiTestifyUITests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiTestifyUITests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +52,11 @@
 		070C7BEE2DE1EBD300187B10 /* uiTestifyUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = uiTestifyUITests;
+			sourceTree = "<group>";
+		};
+		1ACF64262F799DB6005D863E /* uiTestifyUITests2 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = uiTestifyUITests2;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,15 +83,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ACF64222F799DB6005D863E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		070C7BCB2DE1EBD100187B10 = {
 			isa = PBXGroup;
 			children = (
+				1ACF64202F799B0C005D863E /* uiTestify.xctestplan */,
 				070C7BD62DE1EBD100187B10 /* uiTestify */,
 				070C7BE42DE1EBD300187B10 /* uiTestifyTests */,
 				070C7BEE2DE1EBD300187B10 /* uiTestifyUITests */,
+				1ACF64262F799DB6005D863E /* uiTestifyUITests2 */,
 				070C7BD52DE1EBD100187B10 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +111,7 @@
 				070C7BD42DE1EBD100187B10 /* uiTestify.app */,
 				070C7BE12DE1EBD300187B10 /* uiTestifyTests.xctest */,
 				070C7BEB2DE1EBD300187B10 /* uiTestifyUITests.xctest */,
+				1ACF64252F799DB6005D863E /* uiTestifyUITests2.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +187,29 @@
 			productReference = 070C7BEB2DE1EBD300187B10 /* uiTestifyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1ACF64242F799DB6005D863E /* uiTestifyUITests2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ACF642D2F799DB6005D863E /* Build configuration list for PBXNativeTarget "uiTestifyUITests2" */;
+			buildPhases = (
+				1ACF64212F799DB6005D863E /* Sources */,
+				1ACF64222F799DB6005D863E /* Frameworks */,
+				1ACF64232F799DB6005D863E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ACF642C2F799DB6005D863E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ACF64262F799DB6005D863E /* uiTestifyUITests2 */,
+			);
+			name = uiTestifyUITests2;
+			packageProductDependencies = (
+			);
+			productName = uiTestifyUITests2;
+			productReference = 1ACF64252F799DB6005D863E /* uiTestifyUITests2.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,7 +217,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					070C7BD32DE1EBD100187B10 = {
@@ -183,6 +230,10 @@
 					070C7BEA2DE1EBD300187B10 = {
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 2620;
+						TestTargetID = 070C7BD32DE1EBD100187B10;
+					};
+					1ACF64242F799DB6005D863E = {
+						CreatedOnToolsVersion = 26.3;
 						TestTargetID = 070C7BD32DE1EBD100187B10;
 					};
 				};
@@ -204,6 +255,7 @@
 				070C7BD32DE1EBD100187B10 /* uiTestify */,
 				070C7BE02DE1EBD300187B10 /* uiTestifyTests */,
 				070C7BEA2DE1EBD300187B10 /* uiTestifyUITests */,
+				1ACF64242F799DB6005D863E /* uiTestifyUITests2 */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +276,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		070C7BE92DE1EBD300187B10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ACF64232F799DB6005D863E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,6 +313,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ACF64212F799DB6005D863E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -266,6 +332,11 @@
 			isa = PBXTargetDependency;
 			target = 070C7BD32DE1EBD100187B10 /* uiTestify */;
 			targetProxy = 070C7BEC2DE1EBD300187B10 /* PBXContainerItemProxy */;
+		};
+		1ACF642C2F799DB6005D863E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 070C7BD32DE1EBD100187B10 /* uiTestify */;
+			targetProxy = 1ACF642B2F799DB6005D863E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -524,6 +595,46 @@
 			};
 			name = Release;
 		};
+		1ACF642E2F799DB6005D863E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeeshanfree.uiTestifyUITests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = uiTestify;
+			};
+			name = Debug;
+		};
+		1ACF642F2F799DB6005D863E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeeshanfree.uiTestifyUITests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = uiTestify;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +670,15 @@
 			buildConfigurations = (
 				070C7BFC2DE1EBD300187B10 /* Debug */,
 				070C7BFD2DE1EBD300187B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ACF642D2F799DB6005D863E /* Build configuration list for PBXNativeTarget "uiTestifyUITests2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ACF642E2F799DB6005D863E /* Debug */,
+				1ACF642F2F799DB6005D863E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

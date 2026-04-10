@@ -13,6 +13,10 @@ struct HomeView: View {
 
     private let modules: [TestModule] = TestModule.all
 
+    private var isUITestMode: Bool {
+        ProcessInfo.processInfo.environment["UITEST_MODE"] == "1"
+    }
+
     var filteredModules: [TestModule] {
         if searchQuery.isEmpty { return modules }
         return modules.filter { $0.title.localizedCaseInsensitiveContains(searchQuery) }
@@ -54,11 +58,18 @@ struct HomeView: View {
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
                                 .accessibilityIdentifier("home_page_dark_mode_toggle")
+                                .accessibilityHint("Toggles app light and dark appearance")
+                                .transaction { transaction in
+                                    if isUITestMode { transaction.animation = nil }
+                                }
 
                             Toggle("Auto Refresh", isOn: $autoRefresh)
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
                                 .accessibilityIdentifier("home_page_auto_refresh_toggle")
+                                .transaction { transaction in
+                                    if isUITestMode { transaction.animation = nil }
+                                }
                         }
                         .padding()
                         .background(Color.white.opacity(0.1))
@@ -109,8 +120,7 @@ struct HomeView: View {
                 .padding()
             }
             .navigationTitle("UiTestify Dashboard")
-            .accessibilityIdentifier("home_page_title_text")
-        }
+            }
         .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
     }
 }
