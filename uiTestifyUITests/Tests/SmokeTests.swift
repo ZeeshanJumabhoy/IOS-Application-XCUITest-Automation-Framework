@@ -7,11 +7,10 @@
 
 import XCTest
 
-class SmokeTests: BaseTest {
+final class SmokeTests: BaseTest {
 
-    func test_appLaunchSuccessfully(){
-                // this test will pass and app will visibly open
-                XCTAssertTrue(app.state == .runningForeground)
-        sleep(5)
+    func test_appLaunchesAndDashboardIsVisible() {
+        XCTAssertEqual(app.state, .runningForeground)
+        homePage.assertLaunchDashboardVisible()
     }
 }
