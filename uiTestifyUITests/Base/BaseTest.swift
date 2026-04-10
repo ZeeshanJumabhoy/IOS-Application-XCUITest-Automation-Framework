@@ -10,6 +10,9 @@ import XCTest
 class BaseTest: XCTestCase {
     var app: XCUIApplication!
 
+    /// Main dashboard page object (HomeView).
+    var homePage: HomePage { HomePage(app: app) }
+
     override func setUpWithError() throws {
         try super.setUpWithError()
         continueAfterFailure = false
