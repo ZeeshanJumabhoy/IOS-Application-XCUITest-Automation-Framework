@@ -144,8 +144,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
             endingLineNumber = "12"
-            landmarkName = "test_greetingAndSubtitleVisible()"
-            landmarkType = "7">
+            landmarkName = "HomeDashboardTests"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -159,9 +159,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "30">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -175,9 +173,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "HomeDashboardTests"
-            landmarkType = "3">
+            endingLineNumber = "28">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -191,9 +187,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "29">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,9 +201,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "31">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,9 +215,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "32">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,9 +229,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "33">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -255,9 +243,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "test_darkModeToggleIsTappable()"
-            landmarkType = "7">
+            endingLineNumber = "34">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

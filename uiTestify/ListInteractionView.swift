@@ -38,18 +38,21 @@ struct ListInteractionView: View {
             } else {
                 List {
                     ForEach(items) { item in
-                        HStack {
-                            Text(item.title)
-                            Spacer()
-                            if item.isSelected {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.blue)
-                            }
-                        }
-                        .contentShape(Rectangle())
-                        .onTapGesture {
+                        Button {
                             toggleSelection(for: item)
+                        } label: {
+                            HStack {
+                                Text(item.title)
+                                Spacer()
+                                if item.isSelected {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.blue)
+                                        .accessibilityIdentifier("ListItem_\(item.title)_checkmark")
+                                }
+                            }
+                            .contentShape(Rectangle())
                         }
+                        .buttonStyle(.plain)
                         .accessibilityIdentifier("ListItem_\(item.title)")
                     }
                     .onDelete(perform: deleteItems)

@@ -113,6 +113,8 @@ struct ModalSheetView: View {
             Spacer()
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityElement(children: .combine)
         .accessibilityIdentifier("ModalSheet")
     }
 }
