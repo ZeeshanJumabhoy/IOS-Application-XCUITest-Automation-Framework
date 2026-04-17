@@ -15,12 +15,12 @@ struct FormBasicStep: View {
         VStack(spacing: 16) {
             TextField("Name", text: $name)
                 .textFieldStyle(.roundedBorder)
-                .accessibilityIdentifier("NameField")
+                .accessibilityIdentifier("data-e2e-wizard-name")
 
             TextField("Email", text: $email)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
-                .accessibilityIdentifier("EmailField")
+                .accessibilityIdentifier("data-e2e-wizard-email")
         }
     }
 }

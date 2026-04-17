@@ -26,7 +26,7 @@ final class NetworkPerformancePage {
         app.tapSwiftUIToggleRow(identifier: AccessibilityIds.Network.onlineToggle)
         app.tapSwiftUIToggleRow(identifier: AccessibilityIds.Network.onlineToggle)
 
-        app.tapElement(identifier: AccessibilityIds.AsyncLoading.retryButton)
+        app.tapElement(identifier: AccessibilityIds.Network.retryButton)
 
         app.tapBackButton()
     }

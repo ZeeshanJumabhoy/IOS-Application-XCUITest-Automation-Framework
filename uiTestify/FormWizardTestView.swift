@@ -54,7 +54,7 @@ struct FormWizardTestView: View {
                     Button("Back") {
                         withAnimation { goBack() }
                     }
-                    .accessibilityIdentifier("BackButton")
+                    .accessibilityIdentifier("data-e2e-wizard-back")
                 }
 
                 Spacer()
@@ -64,7 +64,7 @@ struct FormWizardTestView: View {
                 }
                 .disabled(!isStepValid)
                 .buttonStyle(.borderedProminent)
-                .accessibilityIdentifier("NextButton")
+                .accessibilityIdentifier("data-e2e-wizard-next")
             }
         }
         .padding()

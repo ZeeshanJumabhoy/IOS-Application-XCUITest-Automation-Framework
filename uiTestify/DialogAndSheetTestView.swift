@@ -25,21 +25,21 @@ struct DialogAndSheetTestView: View {
                     Button("Show Alert") {
                         showAlert = true
                     }
-                    .accessibilityIdentifier("ShowAlertButton")
+                    .accessibilityIdentifier("data-e2e-dialog-show-alert")
                     .buttonStyle(.borderedProminent)
 
                     // Confirmation Dialog Button
                     Button("Show Confirmation Dialog") {
                         showConfirmation = true
                     }
-                    .accessibilityIdentifier("ShowConfirmationButton")
+                    .accessibilityIdentifier("data-e2e-dialog-show-confirmation")
                     .buttonStyle(.borderedProminent)
 
                     // Sheet Button
                     Button("Open Modal Sheet") {
                         showModal = true
                     }
-                    .accessibilityIdentifier("ShowSheetButton")
+                    .accessibilityIdentifier("data-e2e-dialog-show-sheet")
                     .buttonStyle(.borderedProminent)
 
                     // Toast Button
@@ -53,7 +53,7 @@ struct DialogAndSheetTestView: View {
                             }
                         }
                     }
-                    .accessibilityIdentifier("ShowToastButton")
+                    .accessibilityIdentifier("data-e2e-dialog-show-toast")
                     .buttonStyle(.borderedProminent)
 
                     if !selectedOption.isEmpty {
@@ -79,7 +79,7 @@ struct DialogAndSheetTestView: View {
                         .cornerRadius(12)
                         .padding()
                         .transition(.move(edge: .bottom))
-                        .accessibilityIdentifier("ToastMessage")
+                        .accessibilityIdentifier("data-e2e-dialog-toast")
                 }
             }
         }
@@ -115,6 +115,6 @@ struct ModalSheetView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .accessibilityElement(children: .combine)
-        .accessibilityIdentifier("ModalSheet")
+        .accessibilityIdentifier("data-e2e-dialog-modal-sheet")
     }
 }

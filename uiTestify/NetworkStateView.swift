@@ -28,7 +28,7 @@ struct NetworkStateView: View {
                     .foregroundColor(isOnline ? .green : .red)
             }
             .padding()
-            .accessibilityIdentifier("OnlineToggle")
+            .accessibilityIdentifier("data-e2e-network-online-toggle")
             .onChange(of: isOnline) { value in
                 updateStatus()
             }
@@ -51,7 +51,7 @@ struct NetworkStateView: View {
                     .scaleEffect(animatePulse ? 1.1 : 1.0)
                     .animation(.easeInOut(duration: 0.3), value: animatePulse)
             }
-            .accessibilityIdentifier("RetryButton")
+            .accessibilityIdentifier("data-e2e-network-retry")
 
             // Status Display with Color Feedback
             VStack(spacing: 8) {

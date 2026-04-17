@@ -40,19 +40,19 @@ final class FormFlowPage {
     func runFormWizardCompleteFlow() {
         openFormWizard()
 
-        app.assertElementVisible(identifier: AccessibilityIds.Form.nameField)
-        app.enterTextInField(identifier: AccessibilityIds.Form.nameField, text: TestData.Form.wizardName)
-        app.enterTextInField(identifier: AccessibilityIds.Form.emailField, text: TestData.Form.wizardEmail)
+        app.assertElementVisible(identifier: AccessibilityIds.Form.wizardNameField)
+        app.enterTextInField(identifier: AccessibilityIds.Form.wizardNameField, text: TestData.Form.wizardName)
+        app.enterTextInField(identifier: AccessibilityIds.Form.wizardEmailField, text: TestData.Form.wizardEmail)
 
-        app.tapElement(identifier: AccessibilityIds.Form.nextButton)
+        app.tapElement(identifier: AccessibilityIds.Form.wizardNextButton)
 
         app.assertElementVisible(identifier: AccessibilityIds.Form.ageField)
         app.enterTextInField(identifier: AccessibilityIds.Form.ageField, text: TestData.Form.wizardAge)
 
-        app.tapElement(identifier: AccessibilityIds.Form.nextButton)
+        app.tapElement(identifier: AccessibilityIds.Form.wizardNextButton)
 
         app.assertElementVisible(identifier: AccessibilityIds.Form.confirmationSummary)
-        app.tapElement(identifier: AccessibilityIds.Form.nextButton)
+        app.tapElement(identifier: AccessibilityIds.Form.wizardNextButton)
 
         app.tapButton(labeled: TestLabels.Sheet.close, timeout: UITestDefaults.longWait)
         app.tapBackButton()

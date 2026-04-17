@@ -16,7 +16,7 @@ struct TabBarBehaviorTestView: View {
             // Badge toggle
             Toggle("Show Notification Badge", isOn: $showBadge)
                 .padding()
-                .accessibilityIdentifier("ToggleBadge")
+                .accessibilityIdentifier("data-e2e-tab-bar-toggle-badge")
 
             //TabView
             TabView(selection: $selectedTab) {
@@ -43,7 +43,7 @@ struct TabBarBehaviorTestView: View {
                     view.badge(1)
                 }
             }
-            .accessibilityIdentifier("MainTabView")
+            .accessibilityIdentifier("data-e2e-tab-bar-main")
         }
         .navigationTitle("Tab Bar Test")
     }

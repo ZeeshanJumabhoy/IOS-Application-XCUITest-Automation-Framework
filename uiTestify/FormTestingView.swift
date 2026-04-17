@@ -21,11 +21,11 @@ struct FormTestingView: View {
         Form {
             Section(header: Text("User Info")) {
                 TextField("Name", text: $name)
-                    .accessibilityIdentifier("NameField")
+                    .accessibilityIdentifier("data-e2e-form-name")
                     .autocapitalization(.words)
 
                 TextField("Email", text: $email)
-                    .accessibilityIdentifier("EmailField")
+                    .accessibilityIdentifier("data-e2e-form-email")
                     .keyboardType(.emailAddress)
             }
 
@@ -35,10 +35,10 @@ struct FormTestingView: View {
                         Text(role)
                     }
                 }
-                .accessibilityIdentifier("RolePicker")
+                .accessibilityIdentifier("data-e2e-form-role")
 
                 Toggle("Agree to Terms", isOn: $agreeToTerms)
-                    .accessibilityIdentifier("TermsToggle")
+                    .accessibilityIdentifier("data-e2e-form-terms-toggle")
             }
 
             Section {
@@ -52,7 +52,7 @@ struct FormTestingView: View {
                         showValidationError = true
                     }
                 }
-                .accessibilityIdentifier("SubmitButton")
+                .accessibilityIdentifier("data-e2e-form-submit")
                 .buttonStyle(.borderedProminent)
             }
 
@@ -60,7 +60,7 @@ struct FormTestingView: View {
                 Section {
                     Label("Form submitted successfully!", systemImage: "checkmark.circle.fill")
                         .foregroundColor(.green)
-                        .accessibilityIdentifier("SuccessMessage")
+                        .accessibilityIdentifier("data-e2e-form-success")
                 }
             }
 
@@ -68,7 +68,7 @@ struct FormTestingView: View {
                 Section {
                     Label("Please fill in all fields and agree to terms.", systemImage: "exclamationmark.triangle.fill")
                         .foregroundColor(.red)
-                        .accessibilityIdentifier("ErrorMessage")
+                        .accessibilityIdentifier("data-e2e-form-error")
                 }
             }
         }

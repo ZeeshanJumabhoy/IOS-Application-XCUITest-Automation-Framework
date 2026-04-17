@@ -27,8 +27,8 @@ final class KeyboardNavigationPage {
         app.enterTextInField(identifier: AccessibilityIds.Keyboard.emailField, text: TestData.Keyboard.email)
         app.enterTextInSecureField(identifier: AccessibilityIds.Keyboard.passwordField, text: TestData.Keyboard.password)
 
-        app.tapElement(identifier: AccessibilityIds.Form.submitButton)
-        app.assertElementVisible(identifier: AccessibilityIds.Form.successMessage)
+        app.tapElement(identifier: AccessibilityIds.Keyboard.submitButton)
+        app.assertElementVisible(identifier: AccessibilityIds.Keyboard.successMessage)
 
         app.tapBackButton()
     }
@@ -38,16 +38,16 @@ final class KeyboardNavigationPage {
 
         app.tapElement(identifier: AccessibilityIds.NavigationFlow.startFlowButton)
 
-        app.enterTextInField(identifier: AccessibilityIds.Form.nameField, text: TestData.Navigation.userName)
+        app.enterTextInField(identifier: AccessibilityIds.NavigationFlow.nameField, text: TestData.Navigation.userName)
 
-        app.tapElement(identifier: AccessibilityIds.Form.nextButton)
+        app.tapElement(identifier: AccessibilityIds.NavigationFlow.nextButton)
 
-        app.assertElementVisible(identifier: AccessibilityIds.Form.submitButton)
-        app.tapElement(identifier: AccessibilityIds.Form.submitButton)
+        app.assertElementVisible(identifier: AccessibilityIds.NavigationFlow.submitButton)
+        app.tapElement(identifier: AccessibilityIds.NavigationFlow.submitButton)
 
-        app.assertElementVisible(identifier: AccessibilityIds.Form.successMessage)
+        app.assertElementVisible(identifier: AccessibilityIds.NavigationFlow.successMessage)
 
         app.navigateBackToDashboard()
-        app.staticTexts[AccessibilityIds.HomeView.homeViewTitle].requirePresent(UITestDefaults.elementWait, "Dashboard")
+        app.element(identifier: AccessibilityIds.HomeView.homeViewTitle).requirePresent(UITestDefaults.elementWait, "Dashboard")
     }
 }

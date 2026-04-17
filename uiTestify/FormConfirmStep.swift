@@ -19,6 +19,6 @@ struct FormConfirmStep: View {
             Label("Age: \(age)", systemImage: "calendar")
             Label("Gender: \(gender)", systemImage: "person.2.fill")
         }
-        .accessibilityIdentifier("ConfirmationSummary")
+        .accessibilityIdentifier("data-e2e-wizard-confirmation")
     }
 }

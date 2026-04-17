@@ -55,7 +55,7 @@ extension XCUIApplication {
 
     func navigateBackToDashboard(maxSteps: Int = 8) {
         for _ in 0..<maxSteps {
-            if staticTexts[AccessibilityIds.HomeView.homeViewTitle].exists {
+            if element(identifier: AccessibilityIds.HomeView.homeViewTitle).exists {
                 return
             }
             tapBackButton()

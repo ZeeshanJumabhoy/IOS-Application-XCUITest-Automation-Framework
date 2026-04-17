@@ -37,7 +37,7 @@ struct GesturePlaygroundView: View {
                             bounceTap = false
                         }
                     }
-                    .accessibilityIdentifier("TapBox")
+                    .accessibilityIdentifier("data-e2e-gesture-playground-tap-box")
 
                 // LONG PRESS BOX
                 Text(longPressed ? "Long Pressed!" : "Long Press Me")
@@ -50,7 +50,7 @@ struct GesturePlaygroundView: View {
                     .onLongPressGesture(minimumDuration: 1) {
                         longPressed.toggle()
                     }
-                    .accessibilityIdentifier("LongPressBox")
+                    .accessibilityIdentifier("data-e2e-gesture-playground-long-press-box")
 
                 // DOUBLE TAP BOX
                 ZStack {
@@ -77,7 +77,7 @@ struct GesturePlaygroundView: View {
                         rippleEffect = false
                     }
                 }
-                .accessibilityIdentifier("DoubleTapBox")
+                .accessibilityIdentifier("data-e2e-gesture-playground-double-tap-box")
 
                 // DRAG BOX
                 Text("Drag Me")
@@ -94,7 +94,7 @@ struct GesturePlaygroundView: View {
                                 }
                             }
                     )
-                    .accessibilityIdentifier("DragBox")
+                    .accessibilityIdentifier("data-e2e-gesture-playground-drag-box")
 
                 // PINCH TO ZOOM BOX
                 Image(systemName: "magnifyingglass")
@@ -110,7 +110,7 @@ struct GesturePlaygroundView: View {
                                 }
                             }
                     )
-                    .accessibilityIdentifier("PinchBox")
+                    .accessibilityIdentifier("data-e2e-gesture-playground-pinch-box")
 
                 Spacer()
             }

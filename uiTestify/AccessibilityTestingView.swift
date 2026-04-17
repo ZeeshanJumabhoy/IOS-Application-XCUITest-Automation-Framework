@@ -19,12 +19,12 @@ struct AccessibilityTestingView: View {
             VStack(spacing: 24) {
                 Text("Accessibility Test")
                     .font(.title).bold()
-                    .accessibilityIdentifier("AccessibilityHeader")
+                    .accessibilityIdentifier("data-e2e-a11y-header")
 
                 // Dynamic Type Scaling Test
                 Text("Current Size Category: \(sizeCategory.description)")
                     .font(.subheadline)
-                    .accessibilityIdentifier("SizeCategoryText")
+                    .accessibilityIdentifier("data-e2e-a11y-size-category")
 
                 // Image with/without Accessibility
                 Group {
@@ -42,7 +42,7 @@ struct AccessibilityTestingView: View {
                     }
                 }
                 .foregroundColor(.green)
-                .accessibilityIdentifier("LeafImage")
+                .accessibilityIdentifier("data-e2e-a11y-leaf-image")
 
                 // Button with/without Label
                 Group {
@@ -50,28 +50,28 @@ struct AccessibilityTestingView: View {
                         Button(action: {}) {
                             Label("Labeled Button", systemImage: "checkmark.circle")
                         }
-                        .accessibilityIdentifier("LabeledButton")
+                        .accessibilityIdentifier("data-e2e-a11y-labeled-button")
                     } else {
                         Button(action: {}) {
                             Image(systemName: "checkmark.circle")
                         }
-                        .accessibilityIdentifier("IconOnlyButton")
+                        .accessibilityIdentifier("data-e2e-a11y-icon-only-button")
                     }
                 }
 
                 // Toggle Controls to Test A11y Behavior
                 VStack(spacing: 12) {
                     Toggle("Image is Accessible", isOn: $isImageAccessible)
-                        .accessibilityIdentifier("ImageToggle")
+                        .accessibilityIdentifier("data-e2e-a11y-image-toggle")
 
                     Toggle("Button has Label", isOn: $isButtonLabeled)
-                        .accessibilityIdentifier("ButtonLabelToggle")
+                        .accessibilityIdentifier("data-e2e-a11y-button-label-toggle")
 
                     Toggle("Simulate Bold Text", isOn: $boldText)
-                        .accessibilityIdentifier("BoldTextToggle")
+                        .accessibilityIdentifier("data-e2e-a11y-bold-text-toggle")
 
                     Toggle("Simulate Reduce Motion", isOn: $reduceMotion)
-                        .accessibilityIdentifier("ReduceMotionToggle")
+                        .accessibilityIdentifier("data-e2e-a11y-reduce-motion-toggle")
                 }
 
                 Spacer()

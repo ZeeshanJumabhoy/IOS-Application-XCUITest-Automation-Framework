@@ -43,7 +43,7 @@ struct GestureConflictTestView: View {
                                     hideHUD(after: 1.5)
                                 }
                             }
-                            .accessibilityIdentifier("ZoomableImage")
+                            .accessibilityIdentifier("data-e2e-gesture-conflict-zoom-image")
                     }
                     .frame(height: 300)
                     .background(Color(UIColor.secondarySystemBackground))
@@ -58,7 +58,7 @@ struct GestureConflictTestView: View {
                             .foregroundColor(.white)
                             .cornerRadius(8)
                             .transition(.opacity)
-                            .accessibilityIdentifier("ZoomHUD")
+                            .accessibilityIdentifier("data-e2e-gesture-conflict-zoom-hud")
                     }
                 }
 
@@ -69,7 +69,7 @@ struct GestureConflictTestView: View {
                         .padding()
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
-                        .accessibilityIdentifier("ContentItem_\(index)")
+                        .accessibilityIdentifier("data-e2e-gesture-conflict-content-\(index)")
                 }
 
                 Spacer(minLength: 40)

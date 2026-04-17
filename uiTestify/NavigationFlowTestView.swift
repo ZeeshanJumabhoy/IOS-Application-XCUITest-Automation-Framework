@@ -20,7 +20,7 @@ struct NavigationFlowTestView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .accessibilityIdentifier("StartFlowButton")
+                    .accessibilityIdentifier("data-e2e-navigation-flow-start")
             }
             .padding()
             .navigationTitle("Flow Start")
@@ -39,12 +39,12 @@ struct FlowStepOneView: View {
             TextField("Your Name", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
-                .accessibilityIdentifier("NameField")
+                .accessibilityIdentifier("data-e2e-navigation-flow-name")
 
             NavigationLink("Next", destination: FlowStepTwoView(userName: name))
                 .disabled(name.isEmpty)
                 .opacity(name.isEmpty ? 0.5 : 1)
-                .accessibilityIdentifier("NextButton")
+                .accessibilityIdentifier("data-e2e-navigation-flow-next")
         }
         .padding()
         .navigationTitle("Step 1")
@@ -61,7 +61,7 @@ struct FlowStepTwoView: View {
                 Label("Thanks, \(userName)!", systemImage: "checkmark.seal.fill")
                     .font(.title2)
                     .foregroundColor(.green)
-                    .accessibilityIdentifier("SuccessMessage")
+                    .accessibilityIdentifier("data-e2e-navigation-flow-success")
             } else {
                 Text("Step 2: Confirm Name")
                     .font(.title2)
@@ -77,7 +77,7 @@ struct FlowStepTwoView: View {
                 .background(Color.green)
                 .foregroundColor(.white)
                 .cornerRadius(10)
-                .accessibilityIdentifier("SubmitButton")
+                .accessibilityIdentifier("data-e2e-navigation-flow-submit")
             }
         }
         .padding()

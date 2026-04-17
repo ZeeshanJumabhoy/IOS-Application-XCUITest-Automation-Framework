@@ -24,42 +24,42 @@ struct AsyncLoadingTestView: View {
                 Button("Load Data") {
                     simulateLoading()
                 }
-                .accessibilityIdentifier("LoadButton")
+                .accessibilityIdentifier("data-e2e-async-load")
                 .buttonStyle(.borderedProminent)
 
             case .loading:
                 ProgressView("Loading...")
                     .progressViewStyle(CircularProgressViewStyle())
-                    .accessibilityIdentifier("LoadingIndicator")
+                    .accessibilityIdentifier("data-e2e-async-loading")
 
             case .success(let items):
                 if items.isEmpty {
                     Text("No data available")
                         .foregroundColor(.gray)
-                        .accessibilityIdentifier("EmptyMessage")
+                        .accessibilityIdentifier("data-e2e-async-empty")
                 } else {
                     List(items, id: \.self) { item in
                         Text(item)
-                            .accessibilityIdentifier("Item_\(item)")
+                            .accessibilityIdentifier("data-e2e-async-item-\(item.lowercased())")
                     }
                 }
 
                 Button("Reload") {
                     simulateLoading()
                 }
-                .accessibilityIdentifier("ReloadButton")
+                .accessibilityIdentifier("data-e2e-async-reload")
                 .padding(.top)
 
             case .failure(let error):
                 Text("Error: \(error)")
                     .foregroundColor(.red)
                     .multilineTextAlignment(.center)
-                    .accessibilityIdentifier("ErrorMessage")
+                    .accessibilityIdentifier("data-e2e-async-error")
 
                 Button("Retry") {
                     simulateLoading()
                 }
-                .accessibilityIdentifier("RetryButton")
+                .accessibilityIdentifier("data-e2e-async-retry")
                 .padding(.top)
             }
 

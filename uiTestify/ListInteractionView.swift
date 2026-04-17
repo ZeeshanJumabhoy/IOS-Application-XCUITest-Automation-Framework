@@ -24,7 +24,7 @@ struct ListInteractionView: View {
                     .font(.title2).bold()
                 Spacer()
                 EditButton()
-                    .accessibilityIdentifier("EditButton")
+                    .accessibilityIdentifier("data-e2e-list-edit")
             }
             .padding(.horizontal)
 
@@ -33,7 +33,7 @@ struct ListInteractionView: View {
                 Text("No items available")
                     .foregroundColor(.gray)
                     .font(.headline)
-                    .accessibilityIdentifier("EmptyState")
+                    .accessibilityIdentifier("data-e2e-list-empty-state")
                 Spacer()
             } else {
                 List {
@@ -47,13 +47,13 @@ struct ListInteractionView: View {
                                 if item.isSelected {
                                     Image(systemName: "checkmark.circle.fill")
                                         .foregroundColor(.blue)
-                                        .accessibilityIdentifier("ListItem_\(item.title)_checkmark")
+                                        .accessibilityIdentifier("data-e2e-list-item-\(item.title.lowercased().replacingOccurrences(of: " ", with: "-"))-checkmark")
                                 }
                             }
                             .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
-                        .accessibilityIdentifier("ListItem_\(item.title)")
+                        .accessibilityIdentifier("data-e2e-list-item-\(item.title.lowercased().replacingOccurrences(of: " ", with: "-"))")
                     }
                     .onDelete(perform: deleteItems)
                     .onMove(perform: moveItems)
@@ -66,7 +66,7 @@ struct ListInteractionView: View {
             }
             .padding()
             .buttonStyle(.borderedProminent)
-            .accessibilityIdentifier("ReorderButton")
+            .accessibilityIdentifier("data-e2e-list-reorder")
         }
         .navigationTitle("List Interaction")
     }

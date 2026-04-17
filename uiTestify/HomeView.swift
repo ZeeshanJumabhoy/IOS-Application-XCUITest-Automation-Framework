@@ -39,11 +39,11 @@ struct HomeView: View {
 
                             VStack(alignment: .leading) {
                                 Text("Hi, Test User!")
-                                    .accessibilityIdentifier("home_page_greeting_text")
+                                    .accessibilityIdentifier("data-e2e-username")
                                     .font(.title2).bold()
                                     .foregroundColor(.white)
                                 Text("UI Testing Playground")
-                                    .accessibilityIdentifier("home_page_subtitle_text")
+                                    .accessibilityIdentifier("data-e2e-subtitle")
                                     .font(.subheadline)
                                     .foregroundColor(.white.opacity(0.7))
                             }
@@ -57,7 +57,7 @@ struct HomeView: View {
                             Toggle("Dark Mode", isOn: $themeManager.isDarkMode)
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
-                                .accessibilityIdentifier("home_page_dark_mode_toggle")
+                                .accessibilityIdentifier("data-e2e-home-dark-mode-toggle")
                                 .accessibilityHint("Toggles app light and dark appearance")
                                 .transaction { transaction in
                                     if isUITestMode { transaction.animation = nil }
@@ -66,7 +66,7 @@ struct HomeView: View {
                             Toggle("Auto Refresh", isOn: $autoRefresh)
                                 .toggleStyle(SwitchToggleStyle(tint: Color.primary(forDarkMode: themeManager.isDarkMode)))
                                 .foregroundColor(.white)
-                                .accessibilityIdentifier("home_page_auto_refresh_toggle")
+                                .accessibilityIdentifier("data-e2e-home-auto-refresh-toggle")
                                 .transaction { transaction in
                                     if isUITestMode { transaction.animation = nil }
                                 }
@@ -82,7 +82,7 @@ struct HomeView: View {
                         .background(Color.white.opacity(0.15))
                         .cornerRadius(10)
                         .foregroundColor(.white)
-                        .accessibilityIdentifier("home_page_searchBar")
+                        .accessibilityIdentifier("data-e2e-home-search")
 
                     // Scrollable test modules
                     GeometryReader { geometry in
@@ -93,7 +93,7 @@ struct HomeView: View {
 
                                     if !sectionModules.isEmpty {
                                         AnimatedCategoryHeader(title: category.rawValue)
-                                            .accessibilityIdentifier("dashboard_category_\(category.rawValue.lowercased())")
+                                            .accessibilityIdentifier(DashboardModuleAccessibility.categoryIdentifier(for: category))
 
                                         ForEach(sectionModules) { module in
                                             NavigationLink(destination: module.destination) {
@@ -103,7 +103,7 @@ struct HomeView: View {
                                                     .background(Color.white.opacity(0.15))
                                                     .foregroundColor(.white)
                                                     .cornerRadius(10)
-                                                    .accessibilityIdentifier("dashboard_\(module.title.replacingOccurrences(of: " ", with: "_").lowercased())_button")
+                                                    .accessibilityIdentifier(DashboardModuleAccessibility.moduleIdentifier(forModuleTitle: module.title))
 
                                             }
                                         }
@@ -119,7 +119,16 @@ struct HomeView: View {
                 }
                 .padding()
             }
-            .navigationTitle("UiTestify Dashboard")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("UiTestify Dashboard")
+                        .font(.title3)
+                        .bold()
+                        .accessibilityIdentifier("data-e2e-title")
+                }
+            }
+            .navigationTitle("")
             }
         .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
     }

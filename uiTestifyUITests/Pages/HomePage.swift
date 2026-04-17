@@ -18,7 +18,7 @@ final class HomePage {
     // MARK: - Locators
 
     var dashboardTitle: XCUIElement {
-        app.staticTexts[AccessibilityIds.HomeView.homeViewTitle]
+        app.element(identifier: AccessibilityIds.HomeView.homeViewTitle)
     }
 
     var greeting: XCUIElement {

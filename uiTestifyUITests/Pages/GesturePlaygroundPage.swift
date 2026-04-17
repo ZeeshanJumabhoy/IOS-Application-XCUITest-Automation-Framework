@@ -26,7 +26,7 @@ final class GesturePlaygroundPage {
         app.staticTexts[TestLabels.GesturePlayground.taps1].requirePresent(UITestDefaults.shortWait, "Tap count")
 
         app.tapBackButton()
-        app.staticTexts[AccessibilityIds.HomeView.homeViewTitle].requirePresent(UITestDefaults.elementWait, "Dashboard")
+        app.element(identifier: AccessibilityIds.HomeView.homeViewTitle).requirePresent(UITestDefaults.elementWait, "Dashboard")
     }
 
     func assertLongPressChangesState() {

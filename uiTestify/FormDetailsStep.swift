@@ -17,7 +17,7 @@ struct FormDetailsStep: View {
             TextField("Age", text: $age)
                 .keyboardType(.numberPad)
                 .textFieldStyle(.roundedBorder)
-                .accessibilityIdentifier("AgeField")
+                .accessibilityIdentifier("data-e2e-wizard-age")
 
             Picker("Gender", selection: $gender) {
                 ForEach(genders, id: \.self) { g in
@@ -25,7 +25,7 @@ struct FormDetailsStep: View {
                 }
             }
             .pickerStyle(.segmented)
-            .accessibilityIdentifier("GenderPicker")
+            .accessibilityIdentifier("data-e2e-wizard-gender")
         }
     }
 }

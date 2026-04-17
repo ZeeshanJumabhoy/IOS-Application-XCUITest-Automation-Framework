@@ -25,11 +25,11 @@ struct PerformanceLoadTestView: View {
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(8)
                 .padding(.horizontal)
-                .accessibilityIdentifier("SearchField")
+                .accessibilityIdentifier("data-e2e-load-test-search")
 
             Text("Total Items: \(filteredItems.count)")
                 .font(.subheadline)
-                .accessibilityIdentifier("ItemCountLabel")
+                .accessibilityIdentifier("data-e2e-load-test-count")
 
             Divider()
 
@@ -42,7 +42,7 @@ struct PerformanceLoadTestView: View {
                                 .padding()
                                 .background(Color(UIColor.systemBackground))
                                 .overlay(Divider(), alignment: .bottom)
-                                .accessibilityIdentifier("ListItem_\(item)")
+                                .accessibilityIdentifier("data-e2e-load-test-row-\(item.lowercased().replacingOccurrences(of: " ", with: "-"))")
                         }
                     }
                 }

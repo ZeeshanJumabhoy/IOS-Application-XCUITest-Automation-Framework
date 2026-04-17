@@ -29,7 +29,7 @@ struct KeyboardFocusTestView: View {
                     .focused($focusedField, equals: .username)
                     .submitLabel(.next)
                     .onSubmit { focusedField = .email }
-                    .accessibilityIdentifier("UsernameField")
+                    .accessibilityIdentifier("data-e2e-keyboard-username")
 
                 TextField("Email", text: $email)
                     .textFieldStyle(.roundedBorder)
@@ -37,7 +37,7 @@ struct KeyboardFocusTestView: View {
                     .focused($focusedField, equals: .email)
                     .submitLabel(.next)
                     .onSubmit { focusedField = .password }
-                    .accessibilityIdentifier("EmailField")
+                    .accessibilityIdentifier("data-e2e-keyboard-email")
 
                 SecureField("Password", text: $password)
                     .textFieldStyle(.roundedBorder)
@@ -47,7 +47,7 @@ struct KeyboardFocusTestView: View {
                         focusedField = nil
                         showSuccess = true
                     }
-                    .accessibilityIdentifier("PasswordField")
+                    .accessibilityIdentifier("data-e2e-keyboard-password")
             }
 
             Button("Submit") {
@@ -56,12 +56,12 @@ struct KeyboardFocusTestView: View {
             }
             .disabled(!formValid)
             .buttonStyle(.borderedProminent)
-            .accessibilityIdentifier("SubmitButton")
+            .accessibilityIdentifier("data-e2e-keyboard-submit")
 
             if showSuccess {
                 Label("Submitted successfully!", systemImage: "checkmark.circle.fill")
                     .foregroundColor(.green)
-                    .accessibilityIdentifier("SuccessMessage")
+                    .accessibilityIdentifier("data-e2e-keyboard-success")
             }
 
             Spacer()
